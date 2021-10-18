@@ -12,5 +12,6 @@ namespace ReactABReal.Models
         public EFUserRepository(ApplicationContext ctx) => context = ctx;
         
         public IQueryable<User> Users => context.Users;
+
     }
 }
