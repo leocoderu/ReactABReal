@@ -26,7 +26,6 @@ namespace ReactABReal
 
             services.AddTransient<IUserRepository, EFUserRepository>();
 
-
             services.AddControllersWithViews();
 
             // In production, the React files will be served from this directory

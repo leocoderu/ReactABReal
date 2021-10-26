@@ -10,7 +10,7 @@ using ReactABReal.Models;
 namespace ReactABReal.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
         private readonly ILogger<UserController> _logger;
@@ -56,30 +56,54 @@ namespace ReactABReal.Controllers
         {
             user.Id = id;
 
-            //repository.Entry(User).State = EntityState.Modified;
             _context.Entry(User).State = EntityState.Modified;
 
             try
             {
-                //await repository.SaveChangesAsync();
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UserExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                if (!UserExists(id)) return NotFound();
+                    else throw;
             }
 
             return NoContent();
         }
 
-        
-        
+        // POST: api/User
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        // more details see https://aka.ms/RazorPagesCRUD.
+        /*[HttpPost]
+        public async Task<ActionResult<User>> PostUser(User user)
+        {
+            _context.Users.Add(user);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetUser", new { id = user.Id }, user);
+        }*/
+
+        [HttpPost]
+        public IActionResult Post(User user)
+        {
+            //user.Id = Guid.NewGuid().ToString();
+            //data.Add(phone);
+            _context.Users.Add(user);
+            return Ok(user);
+        }
+
+        // DELETE: api/DCandidate/5
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<User>> DeleteUser(int id)
+        {
+            var user = await _context.Users.FindAsync(id);
+            if (user == null) return NotFound();
+            
+            _context.Users.Remove(user);
+            await _context.SaveChangesAsync();
+
+            return user;
+        }
+
     }
 }
