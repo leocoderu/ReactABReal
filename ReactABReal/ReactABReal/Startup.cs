@@ -24,7 +24,7 @@ namespace ReactABReal
             services.AddDbContext<ApplicationContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("DataAccessPostgreSqlProvider")));
 
-            services.AddTransient<IUserRepository, EFUserRepository>();
+            //services.AddTransient<IUserRepository, EFUserRepository>();
 
             services.AddControllersWithViews();
 
