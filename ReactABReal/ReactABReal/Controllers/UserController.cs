@@ -27,8 +27,9 @@ namespace ReactABReal.Controllers
         [HttpPost]
         public IActionResult Post(User user)
         {
+            //user.Id = 8;
             _context.Users.Add(user);
-            _context.SaveChangesAsync();
+            _context.SaveChanges();
             return Ok(user);
         }
 
@@ -39,7 +40,7 @@ namespace ReactABReal.Controllers
             if (user == null) return NotFound();
             
             _context.Users.Remove(user);
-            _context.SaveChangesAsync();
+            _context.SaveChanges();
 
             return Ok(user);
         }

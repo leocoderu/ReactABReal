@@ -115,7 +115,7 @@ class UsersList extends React.Component {
     onRemoveUser(user) {
 
         if (user) {
-            var url = this.props.apiUrl + "/" + user.id;
+            var url = this.props.apiUrl + "/" + this.state.users.map(x => x.id);
 
             var xhr = new XMLHttpRequest();
             xhr.open("delete", url, true);
@@ -131,18 +131,32 @@ class UsersList extends React.Component {
     render() {
 
         var remove = this.onRemoveUser;
-        return <div>
-            <UserForm onUserSubmit={this.onAddUser} />
-            <h2>Users list</h2>
+        return (
             <div>
-                {
-                    this.state.users.map(function (user) {
-
-                        return <User key={user.id} user={user} onRemove={remove} />
-                    })
-                }
+                <h2>Users list</h2>
+                <table className='table table-bordered table-sm table-striped' aria-labelledby="tabelLabel">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.users.map(user =>
+                            <tr key={user.id}>
+                                <td>{user.id}</td>
+                                <td>{user.name}</td>
+                                <td>{user.price}</td>
+                                <td><button onClick={this.onRemoveUser}>Delete</button></td>
+                            </tr>
+                        )}
+                    </tbody>
+                </table>
+                <UserForm onUserSubmit={this.onAddUser} />
             </div>
-        </div>;
+        );
     }
 }
 
