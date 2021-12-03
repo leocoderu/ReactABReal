@@ -15,11 +15,12 @@ class User extends React.Component {
         this.props.onRemove(this.state.data);
     }
     render() {
-        return <div>
-            <p><b>{this.state.data.name}</b></p>
-            <p>Price {this.state.data.price}</p>
-            <p><button onClick={this.onClick}>Delete</button></p>
-        </div>;
+        return <tr key={this.state.data.id}>
+                <td>{this.state.data.id}</td>
+                <td>{this.state.data.name}</td>
+                <td>{this.state.data.price}</td>
+                <td><button onClick={this.onClick}>Delete</button></td>
+            </tr>;
     }
 }
 
@@ -115,7 +116,7 @@ class UsersList extends React.Component {
     onRemoveUser(user) {
 
         if (user) {
-            var url = this.props.apiUrl + "/" + this.state.users.map(x => x.id);
+            var url = this.props.apiUrl + "/" + user.id;
 
             var xhr = new XMLHttpRequest();
             xhr.open("delete", url, true);
@@ -145,12 +146,7 @@ class UsersList extends React.Component {
                     </thead>
                     <tbody>
                         {this.state.users.map(user =>
-                            <tr key={user.id}>
-                                <td>{user.id}</td>
-                                <td>{user.name}</td>
-                                <td>{user.price}</td>
-                                <td><button onClick={this.onRemoveUser}>Delete</button></td>
-                            </tr>
+                            <User user={user.id} user={user} onRemove={remove} />
                         )}
                     </tbody>
                 </table>
