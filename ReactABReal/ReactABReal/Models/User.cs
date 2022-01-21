@@ -4,27 +4,26 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ReactABReal.Models
 {
-    //[DisplayName("Users")]
+    [DisplayName("Users")]
     public class User
     {
-        //[Key]
+        [Key]
         public int Id { get; set; }
 
-        //[Required(ErrorMessage = "User name necessary", AllowEmptyStrings = false)]
-        //[Display(Name = "User name")]
-        //[StringLength(50)]
+        [Required(ErrorMessage = "User name necessary", AllowEmptyStrings = false)]
+        [Display(Name = "User name")]
+        [StringLength(50)]
         public string Name { get; set; }
-        public int? Price { get; set; }
 
-        /*[Required]
+        [Required]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         [Display(Name = "Date Registration")]
-        public DateTime? DateReg { get; set; }
+        public DateTime DateReg { get; set; }
 
         [Required]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         [Display(Name = "Date Last Action")]
-        public DateTime? DateLast { get; set; }
-        */
+        public DateTime DateLast { get; set; }
+        
     }
 }

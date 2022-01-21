@@ -20,7 +20,7 @@ namespace ReactABReal.Controllers
         [HttpGet]
         public IEnumerable<User> Get()
         {
-            return _context.Users.ToList();
+            return _context.Users.ToArray();
         }
 
 
