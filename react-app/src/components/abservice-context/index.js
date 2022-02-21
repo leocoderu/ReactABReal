@@ -1,3 +1,2 @@
-import React from "react";
-
-const {Provider: AbServiceProvider, Consumer: AbServiceConsumer} = React.createContext();
+import {AbServiceProvider, AbServiceConsumer} from './abservice-context';
+export {AbServiceProvider, AbServiceConsumer};

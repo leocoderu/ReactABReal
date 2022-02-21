@@ -1,0 +1,27 @@
+body {
+    /*background-color: #050505;*/
+}
+
+.error-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #801210;
+
+    font-family: 'Ubuntu', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+}
+.error-page span {
+    margin-bottom: 0.6rem;
+}
+
+.error-indicator img {
+    margin-bottom: 2rem;
+}
+
+.error-page .oops{
+    font-size: 1.7rem;
+}

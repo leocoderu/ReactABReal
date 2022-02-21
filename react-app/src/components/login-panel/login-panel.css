@@ -1,0 +1,35 @@
+.login-panel {
+    display: flex;
+    flex-direction: row;
+    top: 50%;
+    height: 40px;
+    width: 90px;
+    /*background-color: coral;*/
+}
+
+.login-panel img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+
+.but-log {
+    position: relative;
+    width: 70px;
+}
+
+.but-log button {
+    position: absolute;
+    right: 5px;
+    border: none;
+    padding: 0;
+    margin-top: 7px;
+    background: transparent;
+}
+
+.but-log button img {
+    margin-top: 1px;
+    width: 25px;
+    height: 25px;
+}

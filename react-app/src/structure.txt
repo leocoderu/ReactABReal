@@ -1,0 +1,15 @@
+<App>                           <-state
+    <Header />
+
+    <div>
+        <div leftPanel>
+            <Menu />            < ----- Links
+        </div
+        <div rightPanel>
+            <Route> -> <Users />
+            <Route> -> <Calc />
+        </div
+    </div
+
+    <Footer />
+</App>

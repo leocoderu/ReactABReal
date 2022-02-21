@@ -1,12 +1,11 @@
 .search-form {
     position: relative;
-    top: 50%;
-    left: 0;
+    top: 5px;
     width: 320px;
     height: 28px;
     border-radius: 15px;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-    transform: translate(-50%, -50%);
+
     background: #fff;
     transition: all 0.3s ease;
 }
@@ -32,11 +31,11 @@
     margin-left: 5px;
     font-size: 1rem;
     font-family: fontawesome !important;
+    color: #BBB;
 }
 
 .search-input {
     position: relative;
-    top: -2px;
     font-size: 14px;
     background: #fff;
     color: #5a6674;

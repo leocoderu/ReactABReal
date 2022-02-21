@@ -1,0 +1,11 @@
+.menu-panel {
+    background-color: #FFF;
+    height: 600px;
+    padding: 10px;
+}
+
+.menu-panel p {
+    color: #050505;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}

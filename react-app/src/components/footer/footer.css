@@ -1,0 +1,11 @@
+.foot {
+    height: 50px;
+    padding: 10px 25px;
+}
+
+.foot p {
+    color: #444444;
+    text-align: right;
+    width: auto;
+    margin-right: 20px;
+}
